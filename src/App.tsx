@@ -6,8 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
-import Dashboard from "./pages/admin/Dashboard";
-import Products from "./pages/admin/Products";
+import Dashboard from './pages/admin/Dashboard';
+import Products from './pages/admin/Products';
+import ProductForm from './pages/admin/ProductForm';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,8 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/products" element={<Products />} />
+            <Route path="/admin/products/new" element={<ProductForm />} />
+            <Route path="/admin/products/:id/edit" element={<ProductForm />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
