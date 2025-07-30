@@ -22,9 +22,14 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">
                 Authentication Status: ✅ Secure
               </p>
-              <Button onClick={signOut} variant="outline">
-                Sign Out
-              </Button>
+              <div className="flex gap-2">
+                <Button asChild>
+                  <Link to="/admin">Go to Admin Panel</Link>
+                </Button>
+                <Button onClick={signOut} variant="outline">
+                  Sign Out
+                </Button>
+              </div>
             </div>
           </div>
         ) : (
